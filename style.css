@@ -272,31 +272,24 @@ p {
 	margin: 0 auto;
 	padding: 100px 0;
 }
-#services .service-top {
-	max-width: 500px;
-	margin: 0 auto;
+#services .service-top p {
+    text-align: justify; /* Makes the left and right edges of the text perfectly straight */
+    line-height: 1.8; /* Adds breathing room between the lines so it's easier to read */
+    max-width: 900px; /* Prevents the text from stretching too wide on large screens */
+    margin: 20px auto; /* Centers the whole text block nicely */
+    padding: 0 20px; 
 }
 #services .service-bottom {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch; /* This is the magic rule that forces all cards to match the tallest one */
 }
 #services .service-item {
-	flex-basis: 80%;
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
-	flex-direction: column;
-	padding: 30px;
-	border-radius: 10px;
-	background-image: url(./img/img-1.png);
-	background-size: cover;
-	margin: 10px 5%;
-	position: relative;
-	z-index: 1;
-	overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto; /* Allows the stretch to work properly */
 }
 #services .service-item::after {
 	content: '';
@@ -321,8 +314,7 @@ p {
 	text-transform: uppercase;
 }
 #services .service-item p {
-	color: white;
-	text-align: left;
+    margin-top: auto; /* Pushes the text down evenly if some cards have shorter titles */
 }
 /* End Services Section */
 
